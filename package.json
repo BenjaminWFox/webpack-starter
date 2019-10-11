@@ -1,10 +1,11 @@
 {
-  "name": "row-for-your-life",
+  "name": "webpack-starter",
   "version": "1.0.0",
-  "description": "a tiny javascript game",
+  "description": "a starter project for javascript development with webpack",
   "main": "index.js",
   "scripts": {
     "develop": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js && node postbuild.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -19,6 +20,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
     "webpack": "^4.39.2",
@@ -26,7 +28,13 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "archiver": "^3.1.1",
+    "babel-loader": "^8.0.6",
     "eslint-import-resolver-webpack": "^0.11.1",
+    "terser-webpack-plugin": "^2.1.3",
+    "url-loader": "^2.2.0",
     "webpack-merge": "^4.2.1"
   }
 }

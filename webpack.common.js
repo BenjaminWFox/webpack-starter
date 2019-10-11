@@ -1,6 +1,5 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack')
 const resolve = require('./webpack.config.resolve')
@@ -14,14 +13,30 @@ module.exports = {
   resolve,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash:8].bundle.js',
-    publicPath: '/',
+    filename: 'o.js',
+    publicPath: './',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env'],
+        },
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+        },
+      },
+    ],
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    }),
   ],
 }
