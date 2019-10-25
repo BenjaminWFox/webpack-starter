@@ -17,8 +17,10 @@ module.exports = {
     filename: '[name].[contenthash:8].bundle.js',
     publicPath: '/',
   },
+  optimization: {
+    moduleIds: 'deterministic',
+  },
   plugins: [
-    new webpack.HashedModuleIdsPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
