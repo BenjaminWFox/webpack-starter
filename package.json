@@ -1,32 +1,32 @@
 {
-  "name": "row-for-your-life",
+  "name": "webpack-starter-foundation",
   "version": "1.0.0",
-  "description": "a tiny javascript game",
+  "description": "A webpack foundation for any project",
   "main": "index.js",
   "scripts": {
     "develop": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "babel-eslint": "^10.0.2",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
+    "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
-  },
-  "dependencies": {
-    "eslint-import-resolver-webpack": "^0.11.1",
+    "webpack-dev-server": "^3.8.0",
     "webpack-merge": "^4.2.1"
   }
 }
