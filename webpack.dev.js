@@ -9,13 +9,15 @@ module.exports = merge(common, {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    // In a single-page-app, this will prevent routes outside of the default `/`
+    // from failing with `Cannot GET /pathName`
     historyApiFallback: true,
     publicPath: '/',
     port: 8080,
     host: '0.0.0.0',
   },
   module: {
+    // Any loaders go here:
     rules: [
     ],
   },

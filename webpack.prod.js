@@ -38,6 +38,7 @@ module.exports = merge(common, {
     ],
   },
   module: {
+    // Loaders go here!
     rules: [
     ],
   },
