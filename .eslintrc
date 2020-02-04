@@ -2,11 +2,11 @@
   "extends": "airbnb",
   "env": {
       "jest": true,
-      "browser": true,
+      "browser": true
   },
   "globals": {
     "document": true,
-    "window": true,
+    "window": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -14,8 +14,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "modules": true,
-      "experimentalObjectRestSpread": true,
-    },
+      "experimentalObjectRestSpread": true
+    }
   },
   "rules": {
     "semi": [2, "never"],
@@ -30,7 +30,7 @@
       { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
       { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]},
       { "blankLine": "always", "prev": "*", "next": "return" }
-    ],
+    ]
   },
   "plugins": [
     "import"
