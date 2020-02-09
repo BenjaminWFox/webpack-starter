@@ -18,7 +18,7 @@ module.exports = {
      *   is equal to the directory of the currently running file.
      * */
     app: [path.resolve(__dirname, 'src/index.js')],
-    // Other entries can be added here to split out heavy files
+    // Other entries can be added here to split out large-size bundles
     // see: https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
   },
   /**
@@ -26,6 +26,7 @@ module.exports = {
    * to use the syntax `import module from 'Alias/subfolder'`
    * in your imports, removing the need to remember relative
    * paths to import modules from other parts of your code.
+   * (like `import module from '../../../../some/subfolder`)
    */
   resolve,
   /**
@@ -37,8 +38,8 @@ module.exports = {
     publicPath: '/',
   },
   /**
-   * The `module` object is mainly used for building the `rules` that will be run
-   * against imported modules.
+   * The `module` object is mainly used for building the various `rules` that
+   * will be run against all imported modules.
    */
   module: {
     /**
@@ -47,14 +48,20 @@ module.exports = {
      * will convert any image/font file to a dataUrl (`url-loader`), and
      * transpile javascript into more compatible syntax (`babel-loader`).
      *
-     * Loaders are run in order **from bottom to top**.
+     * IMPORTANT: Loaders are run in order **from bottom to top**.
      */
     rules: [
+      /**
+       *
+       */
       // {
-      //   test: /\.(js|jsx)$/,
+      //   test: /\.(js|jsx)$/, // specifies which files this loader should process
       //   exclude: /(node_modules|bower_components)/,
       //   loader: 'babel-loader',
       // },
+      /**
+       *
+       */
       // {
       //   test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/,
       //   loader: 'url-loader',

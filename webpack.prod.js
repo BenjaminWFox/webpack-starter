@@ -38,10 +38,11 @@ module.exports = merge(common, {
     ],
   },
   module: {
-    // Loaders go here!
+    // Any loaders specific to `prod` go here:
     rules: [
     ],
   },
+  // Any plugins specific to `prod` go here:
   plugins: [
   ],
 })
